@@ -1,0 +1,39 @@
+light-security:
+  jwt:
+    # jwt sign算法
+    algorithm: hs512
+    # jwt secret
+    secret: http-security-secret-modify-mehttp-security-secret-modify
+    # jwt 有效时间
+    expiration-in-second: 1209600
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+      hibernate: DEBUG
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/plmhtest
+    username: root
+    password: root
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  h2:
+    console:
+      enabled: true
+
+jedis :
+  pool :
+    host : 127.0.0.1
+    port : 6379
+    config :
+      maxTotal: 100
+      maxIdle: 10
+      maxWaitMillis : 100000
+server:
+  port: 8848
+
